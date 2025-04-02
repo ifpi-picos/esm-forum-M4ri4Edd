@@ -25,10 +25,34 @@ function recuperarTodasRespostas(id_pergunta) {
 function recuperarPergunta(id_pergunta) {
     return perguntas.find(p => p.id_pergunta === id_pergunta);
 }
+
+function criarPergunta(texto, id_usuario) {
+    const novaPergunta = {
+        id_pergunta: perguntas.length > 0 ? perguntas[perguntas.length - 1].id_pergunta + 1 : 1,
+        texto,
+        id_usuario
+    };
+    perguntas.push(novaPergunta);
+}
+
+function criarResposta(id_pergunta, texto) {
+    if (!respostas[id_pergunta]) {
+        respostas[id_pergunta] = [];
+    }
+    respostas[id_pergunta].push(texto); 
+}
+
+function limpar() {
+    perguntas.splice(0, perguntas.length);  
+    Object.keys(respostas).forEach(key => delete respostas[key]);  
+}
   
 module.exports = {
     recuperarTodasPerguntas,
     recuperarQtdRespostas,
     recuperarTodasRespostas,
-    recuperarPergunta
+    recuperarPergunta,
+    criarPergunta,
+    criarResposta,
+    limpar
 };
