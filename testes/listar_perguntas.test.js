@@ -11,7 +11,7 @@ test('Testando listar três perguntas com suas respectivas quantidades de respos
   expect(perguntas[1].texto).toBe('Qual a capital de RJ?');
   expect(perguntas[2].texto).toBe('Qual a capital de SP?');
 
-  expect(perguntas[0].num_respostas).toBe(2);
-  expect(perguntas[1].num_respostas).toBe(1);
-  expect(perguntas[2].num_respostas).toBe(3);
+  expect(perguntas[0].qtdRespostas).toBe(2);
+  expect(perguntas[1].qtdRespostas).toBe(1);
+  expect(perguntas[2].qtdRespostas).toBe(3);
 });
