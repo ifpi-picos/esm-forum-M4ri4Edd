@@ -22,6 +22,6 @@ test('Testando cadastro de três perguntas', async () => {
   expect(perguntas.length).toBe(3);
   expect(perguntas[0].texto).toBe('1 + 1 = ?');
   expect(perguntas[1].texto).toBe('2 + 2 = ?');
-  expect(perguntas[2].num_respostas).toBe(0);
+  expect(perguntas[2].qtdRespostas).toBe(0);
   expect(perguntas[1].id_pergunta).toBe(perguntas[2].id_pergunta - 1);
 });
